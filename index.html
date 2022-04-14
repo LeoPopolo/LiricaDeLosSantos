@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/0420c2d0e0.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+    <title>Lirica de los santos</title>
+</head>
+<body>
+    <aside>
+        <span class="title-header">
+            <span id="btn-back"><i class="fas fa-chevron-left"></i></span>
+            <h1> Lirica de los santos</h1>
+        </span>
+        <div id="options">
+            <div id="option_about"><span>Nosotros</span></div>
+            <div id="option_social"><span>Nuestras Redes</span></div>
+            <div id="option_inscription"><span>Inscripción a LDS 2022</span></div>
+        </div>
+
+        <div id="about">
+            <p>
+                Lírica de Los Santos, es una competencia de rap cristiano, que organiza el Ministerio de Adolescentes de la Iglesia Del Puente. 
+                Más allá de generar un espacio para la juventud, buscamos dar un mensaje a través de la lírica. Es un evento que congrega a gente que cree en Dios y gente que no, 
+                pero lo que se transmite en cada batalla es lo relevante, a pesar de la competencia en sí.
+                Este evento nace en el corazón de Dios, para mostrar su amor de una forma distinta con mucha creatividad cada participante busca alcanzar el primer puesto, 
+                desde su gran talento pero sin faltar el respeto a su contrincante. 
+                Este año volvemos con todo para una segunda edición y esta vez, de forma presencial.
+            </p>
+        </div>
+
+        <div id="social">
+            <div>
+                <img src="./images/instagram.png"> <span>@adolescentes__idp</span>
+            </div>
+            <div>
+                <img src="./images/facebook.png"> <span>ING impactando nuestra generación</span>
+            </div>
+            <div>
+                <img src="./images/youtube.png"> <span>ING impactando nuestra generación</span>
+            </div>
+        </div>
+
+        <div id="inscription">
+            <div id="form">
+                <h1>Formulario de inscripción</h1>
+                <div>
+                    <input id="input-name" type="text" placeholder="Nombre y Apellido">
+                </div>
+                <div>
+                    <input id="input-artistic-name" type="text" placeholder="Nombre artistico">
+                </div>
+                <div>
+                    <input id="input-church" type="text" placeholder="Iglesia">
+                </div>
+                <div>
+                    <input id="input-leader" type="text" placeholder="Líder">
+                </div>
+                <div>
+                    <input id="input-age" type="text" placeholder="Edad">
+                </div>
+                <div>
+                    <input id="input-phone" type="text" placeholder="Teléfono">
+                </div>
+                <div>
+                    <input id="input-social" type="text" placeholder="Redes Sociales">
+                </div>
+                <div class="photo-container">
+                    <button id="file-button"> <i class="fas fa-camera" style="margin-right: 1rem;"></i> Subir foto </button>
+                    <i id="photo-title"></i>
+                    <input type="file" id="file-input">
+                </div>
+                <div class="send-data">
+                    <button id="send-button">Enviar formulario</button>
+                    <span class="spinner" id="spinner"></span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="logo">
+        <img src="./images/logo.png" alt="">
+    </div>
+</body>
+</html>
