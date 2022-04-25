@@ -7,6 +7,10 @@
     font-family: 'MedievalSharp', cursive;
 }
 
+html {
+    overflow: hidden;
+}
+
 :root {
     --font-color: #f5e343;
 }
@@ -15,6 +19,7 @@ body {
     background: url("../images/wallpaper.jpg");
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
 }
 
 aside {
@@ -171,6 +176,12 @@ aside > div > div > span:hover {
 }
 
 @media (max-width: 799px) {
+
+    #btn-back {
+        margin-top: 1rem;
+        font-size: 2.2rem;
+    }
+
     aside {
         width: 100%;
         background-color: #000000dd;
@@ -192,7 +203,30 @@ aside > div > div > span:hover {
     .title-header h1 {
         font-size: 2.5rem;
         margin: 0 auto;
+        padding-top: 1.5rem;
         width: 100%;
+    }
+
+    #about {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    #about p {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    #form h1 {
+        font-size: 1.5rem !important;
+    }
+
+    #social div img {
+        width: 12%;
+    }
+
+    #social div span {
+        font-size: 1.1rem;
     }
 
     .logo {
@@ -200,6 +234,14 @@ aside > div > div > span:hover {
         bottom: 2rem;
         right: 2rem;
         width: 25vw;
+    }
+
+    #options, #about, #social, #inscription {
+        transition: all 200ms ease-out;
+    }
+
+    .logo img {
+        opacity: 0.3;
     }
 }
 

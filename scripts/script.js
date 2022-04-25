@@ -67,25 +67,33 @@ window.onload = async function () {
 async function sendData(data) {
     let spinner = document.getElementById('spinner');
     let dataOk = false;
-    let name = document.getElementById('input-name').value; 
-    let artisticName = document.getElementById('input-artistic-name').value; 
-    let church = document.getElementById('input-church').value; 
-    let leader = document.getElementById('input-leader').value; 
-    let age = document.getElementById('input-age').value; 
-    let phone = document.getElementById('input-phone').value; 
-    let socialNetwork = document.getElementById('input-social').value; 
+
+    let body = {
+        file: data,
+        name: document.getElementById('input-name').value, 
+        artisticName: document.getElementById('input-artistic-name').value, 
+        church: document.getElementById('input-church').value, 
+        leader: document.getElementById('input-leader').value, 
+        age: document.getElementById('input-age').value, 
+        phone: document.getElementById('input-phone').value, 
+        socialNetwork: document.getElementById('input-social').value
+    }
+
+    if (!validForm(body)) {
+        return;
+    }
 
     spinner.style.display = "inline-block";
 
     var formData = new FormData();
-    formData.append('file', data);
-    formData.append('name', name);
-    formData.append('artisticName', artisticName);
-    formData.append('church', church);
-    formData.append('leader', leader);
-    formData.append('age', age);
-    formData.append('phone', phone);
-    formData.append('social', socialNetwork);
+    formData.append('file', body.data);
+    formData.append('name', body.name);
+    formData.append('artisticName', body.artisticName);
+    formData.append('church', body.church);
+    formData.append('leader', body.leader);
+    formData.append('age', body.age);
+    formData.append('phone', body.phone);
+    formData.append('social', body.socialNetwork);
 
     await fetch('http://localhost:3000/api/email', {
         method: "POST",
@@ -108,6 +116,25 @@ async function sendData(data) {
     } else {
         spinner.style.display = "none";
         alert("Error al enviar el formulario");
+    }
+}
+
+function validForm(data) {
+    if (!data.name || data.name === "" ||
+        !data.artisticName || data.artisticName === "" ||
+        !data.church || data.church === "" ||
+        !data.leader || data.leader === "" ||
+        !data.age || data.age === "" ||
+        !data.phone || data.phone === "" ||
+        !data.socialNetwork || data.socialNetwork === "") {
+            
+        alert("Falta completar campos necesarios.");
+        return false;
+    } else if (!data.file) {
+        alert("La imagen es obligatoria.");
+        return false;
+    } else {
+        return true;
     }
 }
 
