@@ -2,6 +2,7 @@ var showOptions = true;
 var showAbout = false;
 var showSocial = false;
 var showInscription = false;
+var loading = false;
 var btnBack;
 
 window.onload = async function () {
@@ -60,13 +61,16 @@ window.onload = async function () {
     });
 
     sendButton.addEventListener('click', async ()=>{
-        await sendData(image);
+        if (!loading) {
+            await sendData(image);
+        }
     });
 }
 
 async function sendData(data) {
     let spinner = document.getElementById('spinner');
     let dataOk = false;
+    loading = true;
 
     let body = {
         file: data,
@@ -86,7 +90,7 @@ async function sendData(data) {
     spinner.style.display = "inline-block";
 
     var formData = new FormData();
-    formData.append('file', body.data);
+    formData.append('file', body.file);
     formData.append('name', body.name);
     formData.append('artisticName', body.artisticName);
     formData.append('church', body.church);
@@ -95,7 +99,7 @@ async function sendData(data) {
     formData.append('phone', body.phone);
     formData.append('social', body.socialNetwork);
 
-    await fetch('http://localhost:3000/api/email', {
+    await fetch('https://lds.onrender.com/api/email', {
         method: "POST",
         body: formData,
     })
@@ -112,9 +116,11 @@ async function sendData(data) {
         showAbout = false;
         showSocial = false;
         showInscription = false;
+        loading = false;
         toggleOptionsDiv();
     } else {
         spinner.style.display = "none";
+        loading = false;
         alert("Error al enviar el formulario");
     }
 }
