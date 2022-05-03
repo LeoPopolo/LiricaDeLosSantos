@@ -5,6 +5,7 @@
     outline: none;
     border: none;
     font-family: 'MedievalSharp', cursive;
+    text-decoration: none;
 }
 
 html {
@@ -94,6 +95,11 @@ aside > div > div > span:hover {
     align-items: center;
 }
 
+#social a {
+    display: flex;
+    align-items: center;
+}
+
 #social div img {
     width: 7%;
     margin-right: 5%;
@@ -101,9 +107,12 @@ aside > div > div > span:hover {
 
 #inscription #form {
     padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
 }
 
-#inscription #form h1 {
+#inscription h1 {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 2rem;
@@ -217,6 +226,14 @@ aside > div > div > span:hover {
         line-height: 1.5rem;
     }
 
+    #form {
+        display: block !important;
+    }
+
+    #form div {
+        margin: 0;
+    }
+
     #form h1 {
         font-size: 1.5rem !important;
     }
@@ -242,6 +259,19 @@ aside > div > div > span:hover {
 
     .logo img {
         opacity: 0.3;
+    }
+}
+
+
+@media (max-width: 399px) {
+
+    #inscription h1 {
+        font-size: 1.4rem;
+    }
+
+    #inscription #form div input {
+        padding: .5rem;
+        font-size: 1.2rem;
     }
 }
 
