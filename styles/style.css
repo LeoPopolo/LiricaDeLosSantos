@@ -85,7 +85,7 @@ aside > div > div > span:hover {
 
 #about p {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     line-height: 2.5rem;
 }
 
@@ -262,6 +262,14 @@ aside > div > div > span:hover {
     }
 }
 
+@media (max-width: 1380px) {
+    
+    #about p {
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+    }
+}
 
 @media (max-width: 399px) {
 
